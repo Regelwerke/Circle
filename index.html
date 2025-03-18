@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle. - Coming Soon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Triodion&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #808080;
+            color: #fff;
+            font-family: 'Triodion', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            margin: 0;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            margin: 20px 0;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 5px;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        input {
+            padding: 10px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            width: 250px;
+        }
+        button {
+            background-color: #fff;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            margin-left: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Circle.</h1>
+    <p>Revolutionize the way you take care of your relationships.</p>
+    <img src="/mnt/data/250218_Mock Interface Iphone15_page-0001.jpg" alt="Circle UI Preview">
+    <form id="emailForm">
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <button type="submit">Notify Me</button>
+    </form>
+    <script>
+        document.getElementById('emailForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            fetch('https://script.google.com/macros/s/YOUR_GOOGLE_SCRIPT_URL/exec', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({ email })
+            })
+            .then(response => response.json())
+            .then(data => alert('Thank you! You\'ll be notified.'))
+            .catch(error => alert('Something went wrong. Try again.'));
+        });
+    </script>
+</body>
+</html>
