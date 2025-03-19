@@ -64,7 +64,7 @@
         document.getElementById('emailForm').addEventListener('submit', function(event) {
             event.preventDefault();
             const email = document.getElementById('email').value;
-            fetch('https://script.google.com/d/1ejktMMzCO5SU40n3iDM9zeoW92KSebsEcwdNncs9Z8UHaYnjdSRM6hEK/edit?usp=sharing', {
+            fetch('https://script.google.com/macros/s/AKfycbytSBuptCvXklDgcI6Voe3TDoMwiF9fRvmBnt_7uEqyCHsKyU9u-leMeIIIC_J-8irJ/exec', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: new URLSearchParams({ email })
